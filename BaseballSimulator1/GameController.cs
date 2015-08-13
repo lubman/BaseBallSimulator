@@ -52,7 +52,9 @@ namespace BaseballSimulator1
            
            
            
-           TodayGame.inning = TodayGame.inning + 0.5;            
+           
+           TodayGame.inning = TodayGame.inning + 0.5; 
+           
        
        }
              

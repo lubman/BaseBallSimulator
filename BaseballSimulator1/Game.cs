@@ -28,17 +28,15 @@ namespace BaseballSimulator1
 
         /* 	game stats */
         public double ab, r, hit, rbi, e, ip, h, er, bb, so, hbp, to, pitchCount;
-
-
+        
+        public FieldingPosition FieldingPositionNow {get;set;}       
+        public int HittingPositionNow {get;set;}
+        public String Name {get; set;}
+    
         public void clearGameStats()
         {
             pitchCount = ab = r = hit = rbi = e = ip = h = er = bb = hbp = to = so = 0;
         }
-
-        public FieldingPosition FieldingPositionNow {get;set;}       
-        public int HittingPositionNow {get;set;}
-        public String Name {get; set;}
-
         public String toString()
         {
             return Name.ToString() + " (" + FieldingPositionNow.ToString() + ")";
@@ -55,10 +53,10 @@ namespace BaseballSimulator1
         public String name;
         public int year;
                 
-        //Player[] currentOrder=new Player[10];
+        Player[] currentOrder=new Player[10];
         Player[] currentFielders = new Player[12];
                 
-        public void StartPlayer(Player player,int battingPosition,FieldingPosition position){
+        public void StartPlayer(Player player,int battingPosition, FieldingPosition position){
 
             player.HittingPositionNow = battingPosition;
             player.FieldingPositionNow = position;
@@ -106,7 +104,7 @@ namespace BaseballSimulator1
 
       public Team PopulateTeam (Team.TeamType cType) 
       {
-          //read roster from JSON file and populate team onjects with players
+          //read roster from JSON file and populate team objects with players
           try
           {
               Team iTeam = new Team();
@@ -116,11 +114,15 @@ namespace BaseballSimulator1
               List<String> PlayersList = JsonConvert.DeserializeObject<List<String>>(json);
               iTeam.TeamPlayers = new List<Player>();
               
+              FieldingPosition fp = FieldingPosition.Pitcher;
               foreach (String PlayerName in PlayersList)
               {
+
                   Player Pl = new Player();
-                  Pl.Name = PlayerName.ToString();                  
+                  Pl.Name = PlayerName.ToString();
+                  Pl.FieldingPositionNow = fp;
                   iTeam.TeamPlayers.Add(Pl);
+                  fp++;
               }
               return iTeam;
           }

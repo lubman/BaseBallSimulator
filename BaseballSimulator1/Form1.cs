@@ -41,6 +41,7 @@ namespace BaseballSimulator1
         {
             try
             {
+                MessageBox.Show("Please place Home.json and Away.json files in c:\\temp folder");
                 GameCtl = new GameController();
                 GameCtl.initializeGame();
 
