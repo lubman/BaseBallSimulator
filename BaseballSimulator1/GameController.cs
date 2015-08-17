@@ -49,12 +49,30 @@ namespace BaseballSimulator1
        public void PlayHalfInning()
 
        {
+           Team CurrentTeam;
+           //check if it is top or the bottom of the inning
+           //for simplicity sake batting order will be done in the sequential order
+           if (TodayGame.inning.ToString().Substring(TodayGame.inning.ToString().Length - 1) == "5")
+           {
+               CurrentTeam = AwayTeam;
+           }
+           else
+           {
+               CurrentTeam = HomeTeam;
+           }
            
-           
-           
-           
+           foreach (Player Batter in CurrentTeam.TeamPlayers)
+           {
+               //get truly random value
+               Random rnd = new Random(Guid.NewGuid().GetHashCode());
+               double ballpct = rnd.NextDouble();
+               double ballStruckPct = rnd.NextDouble();
+               SimpleBatter SB = new SimpleBatter(ballpct, ballStruckPct);
+
+           }
+
+
            TodayGame.inning = TodayGame.inning + 0.5; 
-           
        
        }
              

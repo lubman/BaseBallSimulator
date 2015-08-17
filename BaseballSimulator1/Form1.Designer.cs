@@ -165,10 +165,10 @@
             this.dtScores.AllowUserToAddRows = false;
             this.dtScores.AllowUserToDeleteRows = false;
             this.dtScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtScores.Location = new System.Drawing.Point(399, 611);
+            this.dtScores.Location = new System.Drawing.Point(399, 602);
             this.dtScores.Name = "dtScores";
             this.dtScores.ReadOnly = true;
-            this.dtScores.Size = new System.Drawing.Size(240, 207);
+            this.dtScores.Size = new System.Drawing.Size(240, 216);
             this.dtScores.TabIndex = 15;
             // 
             // btnPlayHalf
