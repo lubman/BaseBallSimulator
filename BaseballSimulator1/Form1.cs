@@ -60,7 +60,7 @@ namespace BaseballSimulator1
 
         private void btnPlayHalf_Click(object sender, EventArgs e)
         {
-
+            GameCtl.PlayHalfInning();
         }
 
     }

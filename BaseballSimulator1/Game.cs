@@ -15,7 +15,7 @@ namespace BaseballSimulator1
     public class Player
     {
         /* 	batting stats */
-        public double G, PA, AB, Run, Hit, singles, doubles, triples, HR, RBI, BB, SO, SB, CS, GDP, HBP;
+        public double G, PA, AB, Run, bHit, singles, doubles, triples, HR, RBI, BB, SO, SB, CS, GDP, HBP;
         public double speedScore, singleAVG, doubleAVG, tripleAVG, HRAVG, BBAVG, SOAVG, HBPAVG;
 
         /* 	piching stats (if applicaple) */

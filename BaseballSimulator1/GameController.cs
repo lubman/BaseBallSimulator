@@ -60,7 +60,7 @@ namespace BaseballSimulator1
            {
                CurrentTeam = HomeTeam;
            }
-           
+
            foreach (Player Batter in CurrentTeam.TeamPlayers)
            {
                //get truly random value
@@ -69,9 +69,25 @@ namespace BaseballSimulator1
                double ballStruckPct = rnd.NextDouble();
                SimpleBatter SB = new SimpleBatter(ballpct, ballStruckPct);
 
+               AtBat AtBatNow = new AtBat();
+
+               AtBat.AtBatResult AtBatResultNow = AtBatNow.SimulateAtBat(SB);
+               Batter.ab++;
+               Batter.AB++;
+               if (AtBatResultNow == AtBat.AtBatResult.Hit)
+               {
+                   Batter.hit++;
+                   Batter.bHit++;
+               }
+               if (AtBatResultNow == AtBat.AtBatResult.Out)
+               {
+
+
+               }
+               if (AtBatResultNow == AtBat.AtBatResult.Walk)
+               {
+               }
            }
-
-
            TodayGame.inning = TodayGame.inning + 0.5; 
        
        }

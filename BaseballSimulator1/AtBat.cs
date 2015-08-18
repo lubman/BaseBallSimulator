@@ -72,7 +72,7 @@ namespace BaseballSimulator1
     {
         //This is a simple batter that hits in proportion to batting average irrespective of game state
 
-        Random r = new Random(Guid.NewGuid().GetHashCode());
+
 
         double _ballStruckPct = 0.4;
         double _foulPct = 0.4;
@@ -92,6 +92,7 @@ namespace BaseballSimulator1
         {
             PitchResults toReturn = PitchResults.Strike;
 
+            Random r = new Random(Guid.NewGuid().GetHashCode());
             double randVal = r.NextDouble();
 
             if (randVal < _ballStruckPct)
