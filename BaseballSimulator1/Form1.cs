@@ -61,6 +61,10 @@ namespace BaseballSimulator1
         private void btnPlayHalf_Click(object sender, EventArgs e)
         {
             GameCtl.PlayHalfInning();
+            txtInning.Text = GameCtl.TodayGame.inning.ToString();
+            dtScores.DataSource = GameCtl.HomeTeam.TeamPlayers;
+
+
         }
 
     }

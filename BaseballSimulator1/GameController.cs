@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace BaseballSimulator1
 {
@@ -10,10 +11,12 @@ namespace BaseballSimulator1
 
    public class GameController
     {
-
+       public DataTable dtPlayerScores;
+       public DataTable dtTeamScores;
        public Game TodayGame;
        public Team HomeTeam;
        public Team AwayTeam;
+       
 
        public void simMany()
        {
@@ -38,6 +41,17 @@ namespace BaseballSimulator1
            AwayTeam = TodayGame.PopulateTeam(Team.TeamType.Away);
            TodayGame.HomeTeam = HomeTeam;
            TodayGame.AwayTeam = AwayTeam;
+           dtPlayerScores = new DataTable("PlayerScores");
+           dtPlayerScores.Columns.Add("Name",System.Type.GetType("System.String"));
+           dtPlayerScores.Columns.Add("AB", System.Type.GetType("System.Int32"));
+           dtPlayerScores.Columns.Add("Hits", System.Type.GetType("System.Int32"));
+           dtPlayerScores.Columns.Add("Walks", System.Type.GetType("System.Int32"));
+           dtPlayerScores.Columns.Add("Avg", System.Type.GetType("System.Double"));
+           dtTeamScores = new DataTable("TeamScores");
+           dtTeamScores.Columns.Add("Name", System.Type.GetType("System.String"));
+           dtTeamScores.Columns.Add("Inning", System.Type.GetType("System.String"));
+           dtTeamScores.Columns.Add("Score", System.Type.GetType("System.Int32"));
+
        }
 
        public void PlayGame()
@@ -52,6 +66,7 @@ namespace BaseballSimulator1
            Team CurrentTeam;
            //check if it is top or the bottom of the inning
            //for simplicity sake batting order will be done in the sequential order
+
            if (TodayGame.inning.ToString().Substring(TodayGame.inning.ToString().Length - 1) == "5")
            {
                CurrentTeam = AwayTeam;
@@ -63,7 +78,7 @@ namespace BaseballSimulator1
 
            foreach (Player Batter in CurrentTeam.TeamPlayers)
            {
-               //get truly random value
+               //get truly random value               
                Random rnd = new Random(Guid.NewGuid().GetHashCode());
                double ballpct = rnd.NextDouble();
                double ballStruckPct = rnd.NextDouble();
@@ -81,11 +96,11 @@ namespace BaseballSimulator1
                }
                if (AtBatResultNow == AtBat.AtBatResult.Out)
                {
-
-
+                   //
                }
                if (AtBatResultNow == AtBat.AtBatResult.Walk)
                {
+                   Batter.W++;
                }
            }
            TodayGame.inning = TodayGame.inning + 0.5; 

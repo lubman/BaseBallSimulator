@@ -78,18 +78,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 511);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Home Team";
+            this.label1.Text = "Home Team Roster";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(183, 511);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Away Team";
+            this.label2.Text = "Away Team Roster";
             // 
             // lstHomeTeam
             // 
@@ -154,26 +154,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(396, 586);
+            this.label5.Location = new System.Drawing.Point(396, 578);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Running Score";
+            this.label5.Text = "Running Scores";
             // 
             // dtScores
             // 
             this.dtScores.AllowUserToAddRows = false;
             this.dtScores.AllowUserToDeleteRows = false;
             this.dtScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtScores.Location = new System.Drawing.Point(399, 602);
+            this.dtScores.Location = new System.Drawing.Point(399, 594);
             this.dtScores.Name = "dtScores";
             this.dtScores.ReadOnly = true;
-            this.dtScores.Size = new System.Drawing.Size(240, 216);
+            this.dtScores.Size = new System.Drawing.Size(240, 224);
             this.dtScores.TabIndex = 15;
             // 
             // btnPlayHalf
             // 
-            this.btnPlayHalf.Location = new System.Drawing.Point(399, 560);
+            this.btnPlayHalf.Location = new System.Drawing.Point(399, 543);
             this.btnPlayHalf.Name = "btnPlayHalf";
             this.btnPlayHalf.Size = new System.Drawing.Size(98, 23);
             this.btnPlayHalf.TabIndex = 16;

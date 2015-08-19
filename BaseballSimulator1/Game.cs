@@ -32,6 +32,9 @@ namespace BaseballSimulator1
         public FieldingPosition FieldingPositionNow {get;set;}       
         public int HittingPositionNow {get;set;}
         public String Name {get; set;}
+        public int Hits {get; set;}
+        public int Walks {get; set;}
+
     
         public void clearGameStats()
         {
