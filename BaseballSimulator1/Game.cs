@@ -34,6 +34,7 @@ namespace BaseballSimulator1
         public String Name {get; set;}
         public int Hits {get; set;}
         public int Walks {get; set;}
+        public int AtBat { get; set; }
 
     
         public void clearGameStats()

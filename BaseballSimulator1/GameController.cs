@@ -87,12 +87,11 @@ namespace BaseballSimulator1
                AtBat AtBatNow = new AtBat();
 
                AtBat.AtBatResult AtBatResultNow = AtBatNow.SimulateAtBat(SB);
-               Batter.ab++;
-               Batter.AB++;
+               Batter.AtBat++;
+               
                if (AtBatResultNow == AtBat.AtBatResult.Hit)
                {
-                   Batter.hit++;
-                   Batter.bHit++;
+               Batter.Hits++;
                }
                if (AtBatResultNow == AtBat.AtBatResult.Out)
                {
@@ -100,7 +99,7 @@ namespace BaseballSimulator1
                }
                if (AtBatResultNow == AtBat.AtBatResult.Walk)
                {
-                   Batter.W++;
+                   Batter.Walks++;
                }
            }
            TodayGame.inning = TodayGame.inning + 0.5; 
