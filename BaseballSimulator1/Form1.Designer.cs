@@ -30,53 +30,47 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtInning = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lstHomeTeam = new System.Windows.Forms.ListBox();
             this.lstAwayTeam = new System.Windows.Forms.ListBox();
             this.Inning = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBatter = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtScores = new System.Windows.Forms.DataGridView();
+            this.dtHomeScores = new System.Windows.Forms.DataGridView();
             this.btnPlayHalf = new System.Windows.Forms.Button();
             this.btnSimulate = new System.Windows.Forms.Button();
             this.lblBatter = new System.Windows.Forms.Label();
+            this.dtAwayTeamScores = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtScores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHomeScores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtAwayTeamScores)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(12, -5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(657, 505);
+            this.pictureBox1.Size = new System.Drawing.Size(458, 346);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(232, 641);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            // 
             // txtInning
             // 
-            this.txtInning.Location = new System.Drawing.Point(126, 641);
+            this.txtInning.Location = new System.Drawing.Point(492, 147);
             this.txtInning.Name = "txtInning";
-            this.txtInning.Size = new System.Drawing.Size(100, 20);
+            this.txtInning.Size = new System.Drawing.Size(115, 20);
             this.txtInning.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 511);
+            this.label1.Location = new System.Drawing.Point(489, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 4;
@@ -85,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(183, 511);
+            this.label2.Location = new System.Drawing.Point(491, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 5;
@@ -94,56 +88,31 @@
             // lstHomeTeam
             // 
             this.lstHomeTeam.FormattingEnabled = true;
-            this.lstHomeTeam.Location = new System.Drawing.Point(17, 527);
+            this.lstHomeTeam.Location = new System.Drawing.Point(492, 33);
             this.lstHomeTeam.Name = "lstHomeTeam";
-            this.lstHomeTeam.Size = new System.Drawing.Size(120, 95);
+            this.lstHomeTeam.Size = new System.Drawing.Size(154, 95);
             this.lstHomeTeam.TabIndex = 6;
             // 
             // lstAwayTeam
             // 
             this.lstAwayTeam.FormattingEnabled = true;
-            this.lstAwayTeam.Location = new System.Drawing.Point(186, 527);
+            this.lstAwayTeam.Location = new System.Drawing.Point(492, 246);
             this.lstAwayTeam.Name = "lstAwayTeam";
-            this.lstAwayTeam.Size = new System.Drawing.Size(139, 95);
+            this.lstAwayTeam.Size = new System.Drawing.Size(154, 95);
             this.lstAwayTeam.TabIndex = 7;
             // 
             // Inning
             // 
             this.Inning.AutoSize = true;
-            this.Inning.Location = new System.Drawing.Point(123, 625);
+            this.Inning.Location = new System.Drawing.Point(489, 131);
             this.Inning.Name = "Inning";
             this.Inning.Size = new System.Drawing.Size(73, 13);
             this.Inning.TabIndex = 8;
             this.Inning.Text = "Current Inning";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 625);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Current Half Inning";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 625);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Current Batter";
-            // 
-            // txtBatter
-            // 
-            this.txtBatter.Location = new System.Drawing.Point(17, 641);
-            this.txtBatter.Name = "txtBatter";
-            this.txtBatter.Size = new System.Drawing.Size(100, 20);
-            this.txtBatter.TabIndex = 11;
-            // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(399, 514);
+            this.btnLoad.Location = new System.Drawing.Point(12, 358);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(98, 23);
             this.btnLoad.TabIndex = 12;
@@ -154,26 +123,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(396, 578);
+            this.label5.Location = new System.Drawing.Point(12, 384);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Running Scores";
+            this.label5.Text = "Home team scores";
             // 
-            // dtScores
+            // dtHomeScores
             // 
-            this.dtScores.AllowUserToAddRows = false;
-            this.dtScores.AllowUserToDeleteRows = false;
-            this.dtScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtScores.Location = new System.Drawing.Point(399, 594);
-            this.dtScores.Name = "dtScores";
-            this.dtScores.ReadOnly = true;
-            this.dtScores.Size = new System.Drawing.Size(240, 224);
-            this.dtScores.TabIndex = 15;
+            this.dtHomeScores.AllowUserToAddRows = false;
+            this.dtHomeScores.AllowUserToDeleteRows = false;
+            this.dtHomeScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtHomeScores.Location = new System.Drawing.Point(15, 400);
+            this.dtHomeScores.Name = "dtHomeScores";
+            this.dtHomeScores.ReadOnly = true;
+            this.dtHomeScores.Size = new System.Drawing.Size(631, 156);
+            this.dtHomeScores.TabIndex = 15;
             // 
             // btnPlayHalf
             // 
-            this.btnPlayHalf.Location = new System.Drawing.Point(399, 543);
+            this.btnPlayHalf.Location = new System.Drawing.Point(190, 358);
             this.btnPlayHalf.Name = "btnPlayHalf";
             this.btnPlayHalf.Size = new System.Drawing.Size(98, 23);
             this.btnPlayHalf.TabIndex = 16;
@@ -183,7 +152,7 @@
             // 
             // btnSimulate
             // 
-            this.btnSimulate.Location = new System.Drawing.Point(541, 514);
+            this.btnSimulate.Location = new System.Drawing.Point(372, 358);
             this.btnSimulate.Name = "btnSimulate";
             this.btnSimulate.Size = new System.Drawing.Size(98, 23);
             this.btnSimulate.TabIndex = 1;
@@ -199,33 +168,62 @@
             this.lblBatter.Size = new System.Drawing.Size(0, 13);
             this.lblBatter.TabIndex = 17;
             // 
+            // dtAwayTeamScores
+            // 
+            this.dtAwayTeamScores.AllowUserToAddRows = false;
+            this.dtAwayTeamScores.AllowUserToDeleteRows = false;
+            this.dtAwayTeamScores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtAwayTeamScores.Location = new System.Drawing.Point(20, 611);
+            this.dtAwayTeamScores.Name = "dtAwayTeamScores";
+            this.dtAwayTeamScores.ReadOnly = true;
+            this.dtAwayTeamScores.Size = new System.Drawing.Size(626, 156);
+            this.dtAwayTeamScores.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 584);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Away team scores";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(524, 358);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(122, 23);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save Scores to JSON";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 820);
+            this.ClientSize = new System.Drawing.Size(710, 776);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtAwayTeamScores);
             this.Controls.Add(this.lblBatter);
             this.Controls.Add(this.btnPlayHalf);
-            this.Controls.Add(this.dtScores);
+            this.Controls.Add(this.dtHomeScores);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.txtBatter);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Inning);
             this.Controls.Add(this.lstAwayTeam);
             this.Controls.Add(this.lstHomeTeam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInning);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSimulate);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Baseball Simulator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtScores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHomeScores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtAwayTeamScores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,22 +232,21 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtInning;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lstHomeTeam;
         private System.Windows.Forms.ListBox lstAwayTeam;
         private System.Windows.Forms.Label Inning;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBatter;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dtScores;
+        private System.Windows.Forms.DataGridView dtHomeScores;
         private System.Windows.Forms.Button btnPlayHalf;
         private System.Windows.Forms.Button btnSimulate;
         private System.Windows.Forms.Label lblBatter;
+        private System.Windows.Forms.DataGridView dtAwayTeamScores;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

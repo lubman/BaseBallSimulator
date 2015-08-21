@@ -11,8 +11,8 @@ namespace BaseballSimulator1
 
    public class GameController
     {
-       public DataTable dtPlayerScores;
-       public DataTable dtTeamScores;
+       //public DataTable dtPlayerScores;
+       //public DataTable dtTeamScores;
        public Game TodayGame;
        public Team HomeTeam;
        public Team AwayTeam;
@@ -41,16 +41,16 @@ namespace BaseballSimulator1
            AwayTeam = TodayGame.PopulateTeam(Team.TeamType.Away);
            TodayGame.HomeTeam = HomeTeam;
            TodayGame.AwayTeam = AwayTeam;
-           dtPlayerScores = new DataTable("PlayerScores");
-           dtPlayerScores.Columns.Add("Name",System.Type.GetType("System.String"));
-           dtPlayerScores.Columns.Add("AB", System.Type.GetType("System.Int32"));
-           dtPlayerScores.Columns.Add("Hits", System.Type.GetType("System.Int32"));
-           dtPlayerScores.Columns.Add("Walks", System.Type.GetType("System.Int32"));
-           dtPlayerScores.Columns.Add("Avg", System.Type.GetType("System.Double"));
-           dtTeamScores = new DataTable("TeamScores");
-           dtTeamScores.Columns.Add("Name", System.Type.GetType("System.String"));
-           dtTeamScores.Columns.Add("Inning", System.Type.GetType("System.String"));
-           dtTeamScores.Columns.Add("Score", System.Type.GetType("System.Int32"));
+           //dtPlayerScores = new DataTable("PlayerScores");
+           //dtPlayerScores.Columns.Add("Name",System.Type.GetType("System.String"));
+           //dtPlayerScores.Columns.Add("AB", System.Type.GetType("System.Int32"));
+           //dtPlayerScores.Columns.Add("Hits", System.Type.GetType("System.Int32"));
+           //dtPlayerScores.Columns.Add("Walks", System.Type.GetType("System.Int32"));
+           //dtPlayerScores.Columns.Add("Avg", System.Type.GetType("System.Double"));
+           //dtTeamScores = new DataTable("TeamScores");
+           //dtTeamScores.Columns.Add("Name", System.Type.GetType("System.String"));
+           //dtTeamScores.Columns.Add("Inning", System.Type.GetType("System.String"));
+           //dtTeamScores.Columns.Add("Score", System.Type.GetType("System.Int32"));
 
        }
 
@@ -101,7 +101,10 @@ namespace BaseballSimulator1
                {
                    Batter.Walks++;
                }
+               Batter.BattingAVG = (double)Batter.Hits/(double)Batter.AtBat;
            }
+           //calculate running Batting Average
+           
            TodayGame.inning = TodayGame.inning + 0.5; 
        
        }

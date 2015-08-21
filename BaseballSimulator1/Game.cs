@@ -28,13 +28,17 @@ namespace BaseballSimulator1
 
         /* 	game stats */
         public double ab, r, hit, rbi, e, ip, h, er, bb, so, hbp, to, pitchCount;
-        
+
+        public String Name { get; set; }
+        public int Hits { get; set; }
+        public int Walks { get; set; }
+        public int AtBat { get; set; }
+        public double BattingAVG { get; set; }
+        public double OBP { get; set; }
         public FieldingPosition FieldingPositionNow {get;set;}       
         public int HittingPositionNow {get;set;}
-        public String Name {get; set;}
-        public int Hits {get; set;}
-        public int Walks {get; set;}
-        public int AtBat { get; set; }
+       
+        
 
     
         public void clearGameStats()

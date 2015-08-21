@@ -62,8 +62,14 @@ namespace BaseballSimulator1
         {
             GameCtl.PlayHalfInning();
             txtInning.Text = GameCtl.TodayGame.inning.ToString();
-            dtScores.DataSource = GameCtl.HomeTeam.TeamPlayers;
+            //update form dataview grids with the info and results from half inning
+            dtHomeScores.DataSource = GameCtl.HomeTeam.TeamPlayers;
+            dtAwayTeamScores.DataSource = GameCtl.AwayTeam.TeamPlayers;
 
+            dtHomeScores.Update();
+            dtHomeScores.Refresh();
+            dtAwayTeamScores.Update();
+            dtAwayTeamScores.Refresh();
 
         }
 
