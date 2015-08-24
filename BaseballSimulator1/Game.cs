@@ -58,7 +58,8 @@ namespace BaseballSimulator1
         public  TeamType TypeOfTeam;
         public List<Player> TeamPlayers {get; set;}
 
-        public String name;
+        public String Name {get;set;}
+        public int InningOuts { get; set; }
         public int year;
                 
         Player[] currentOrder=new Player[10];
@@ -182,6 +183,33 @@ namespace BaseballSimulator1
 
       }
 
+      public void SaveScores(Team CurrentTeam)
+      {
+          try
+          {
+              StreamWriter Writer = new StreamWriter("c:\\temp\\" + CurrentTeam.Name +  + ".json");
+              string json = Reader.ReadToEnd();
+              List<String> PlayersList = JsonConvert.DeserializeObject<List<String>>(json);
+              iTeam.TeamPlayers = new List<Player>();
+
+              FieldingPosition fp = FieldingPosition.Pitcher;
+              foreach (String PlayerName in PlayersList)
+              {
+
+                  Player Pl = new Player();
+                  Pl.Name = PlayerName.ToString();
+                  Pl.FieldingPositionNow = fp;
+                  iTeam.TeamPlayers.Add(Pl);
+                  fp++;
+              }
+              return iTeam;
+          }
+          catch (Exception e)
+          {
+              Console.WriteLine(e.Message);              
+          }
+
+      }
 
 
 

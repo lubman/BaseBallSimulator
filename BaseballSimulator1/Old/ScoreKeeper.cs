@@ -110,7 +110,7 @@ namespace BaseballSimulator1
 	}
 	
 	private String teamTab(Team t) {
-		int length = t.name.Length;
+		int length = t.Name.Length;
 		int tabsNeeded;
 		String tabs = "";
 		if (length <= 15)

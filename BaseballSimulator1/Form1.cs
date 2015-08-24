@@ -43,7 +43,7 @@ namespace BaseballSimulator1
             {
                 MessageBox.Show("Please place Home.json and Away.json files in c:\\temp folder");
                 GameCtl = new GameController();
-                GameCtl.initializeGame();
+                GameCtl.initializeGame(txtHomeTeamName.Text, txtAwayTeamName.Text);
 
                 lstAwayTeam.DataSource = GameCtl.AwayTeam.TeamPlayers;
                 lstAwayTeam.DisplayMember = "Name";
@@ -62,6 +62,7 @@ namespace BaseballSimulator1
         {
             GameCtl.PlayHalfInning();
             txtInning.Text = GameCtl.TodayGame.inning.ToString();
+            
             //update form dataview grids with the info and results from half inning
             dtHomeScores.DataSource = GameCtl.HomeTeam.TeamPlayers;
             dtAwayTeamScores.DataSource = GameCtl.AwayTeam.TeamPlayers;
@@ -71,6 +72,11 @@ namespace BaseballSimulator1
             dtAwayTeamScores.Update();
             dtAwayTeamScores.Refresh();
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
         }
 
     }

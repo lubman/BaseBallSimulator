@@ -32,26 +32,19 @@ namespace BaseballSimulator1
 
 
 
-       public void initializeGame()
+       public void initializeGame(String HomeTeamName, String AwayTeamName)
        {
 
            TodayGame = new Game();
                       
            HomeTeam =  TodayGame.PopulateTeam(Team.TeamType.Home);
+           HomeTeam.Name = HomeTeamName;
            AwayTeam = TodayGame.PopulateTeam(Team.TeamType.Away);
+           AwayTeam.Name = AwayTeamName;
+           
+           //assign teams to the game reference pointers
            TodayGame.HomeTeam = HomeTeam;
            TodayGame.AwayTeam = AwayTeam;
-           //dtPlayerScores = new DataTable("PlayerScores");
-           //dtPlayerScores.Columns.Add("Name",System.Type.GetType("System.String"));
-           //dtPlayerScores.Columns.Add("AB", System.Type.GetType("System.Int32"));
-           //dtPlayerScores.Columns.Add("Hits", System.Type.GetType("System.Int32"));
-           //dtPlayerScores.Columns.Add("Walks", System.Type.GetType("System.Int32"));
-           //dtPlayerScores.Columns.Add("Avg", System.Type.GetType("System.Double"));
-           //dtTeamScores = new DataTable("TeamScores");
-           //dtTeamScores.Columns.Add("Name", System.Type.GetType("System.String"));
-           //dtTeamScores.Columns.Add("Inning", System.Type.GetType("System.String"));
-           //dtTeamScores.Columns.Add("Score", System.Type.GetType("System.Int32"));
-
        }
 
        public void PlayGame()
@@ -64,6 +57,7 @@ namespace BaseballSimulator1
 
        {
            Team CurrentTeam;
+           int Outs = 0;
            //check if it is top or the bottom of the inning
            //for simplicity sake batting order will be done in the sequential order
 
@@ -95,7 +89,10 @@ namespace BaseballSimulator1
                }
                if (AtBatResultNow == AtBat.AtBatResult.Out)
                {
-                   //
+                   Outs++;
+                   if (Outs == 3)
+                    {break;}     
+                   // three times and you're team is out of the Inning
                }
                if (AtBatResultNow == AtBat.AtBatResult.Walk)
                {

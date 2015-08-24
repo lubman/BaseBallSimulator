@@ -45,6 +45,8 @@
             this.dtAwayTeamScores = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtHomeTeamName = new System.Windows.Forms.TextBox();
+            this.txtAwayTeamName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHomeScores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtAwayTeamScores)).BeginInit();
@@ -62,33 +64,34 @@
             // 
             // txtInning
             // 
-            this.txtInning.Location = new System.Drawing.Point(492, 147);
+            this.txtInning.Location = new System.Drawing.Point(494, 179);
             this.txtInning.Name = "txtInning";
             this.txtInning.Size = new System.Drawing.Size(115, 20);
             this.txtInning.TabIndex = 3;
+            this.txtInning.Text = "1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(489, 17);
+            this.label1.Location = new System.Drawing.Point(491, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Home Team Roster";
+            this.label1.Text = "Home Team Name && Roster";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 230);
+            this.label2.Location = new System.Drawing.Point(493, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(137, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Away Team Roster";
+            this.label2.Text = "Away Team Name && Roster";
             // 
             // lstHomeTeam
             // 
             this.lstHomeTeam.FormattingEnabled = true;
-            this.lstHomeTeam.Location = new System.Drawing.Point(492, 33);
+            this.lstHomeTeam.Location = new System.Drawing.Point(492, 65);
             this.lstHomeTeam.Name = "lstHomeTeam";
             this.lstHomeTeam.Size = new System.Drawing.Size(154, 95);
             this.lstHomeTeam.TabIndex = 6;
@@ -104,7 +107,7 @@
             // Inning
             // 
             this.Inning.AutoSize = true;
-            this.Inning.Location = new System.Drawing.Point(489, 131);
+            this.Inning.Location = new System.Drawing.Point(491, 163);
             this.Inning.Name = "Inning";
             this.Inning.Size = new System.Drawing.Size(73, 13);
             this.Inning.TabIndex = 8;
@@ -196,12 +199,31 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Save Scores to JSON";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtHomeTeamName
+            // 
+            this.txtHomeTeamName.Location = new System.Drawing.Point(492, 39);
+            this.txtHomeTeamName.Name = "txtHomeTeamName";
+            this.txtHomeTeamName.Size = new System.Drawing.Size(154, 20);
+            this.txtHomeTeamName.TabIndex = 21;
+            this.txtHomeTeamName.Text = "Phillies";
+            // 
+            // txtAwayTeamName
+            // 
+            this.txtAwayTeamName.Location = new System.Drawing.Point(492, 220);
+            this.txtAwayTeamName.Name = "txtAwayTeamName";
+            this.txtAwayTeamName.Size = new System.Drawing.Size(149, 20);
+            this.txtAwayTeamName.TabIndex = 22;
+            this.txtAwayTeamName.Text = "Diamondbacks";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 776);
+            this.ClientSize = new System.Drawing.Size(657, 776);
+            this.Controls.Add(this.txtAwayTeamName);
+            this.Controls.Add(this.txtHomeTeamName);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtAwayTeamScores);
@@ -247,6 +269,8 @@
         private System.Windows.Forms.DataGridView dtAwayTeamScores;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtHomeTeamName;
+        private System.Windows.Forms.TextBox txtAwayTeamName;
     }
 }
 
