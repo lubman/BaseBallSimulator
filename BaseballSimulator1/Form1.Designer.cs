@@ -155,6 +155,7 @@
             // 
             // btnSimulate
             // 
+            this.btnSimulate.Enabled = false;
             this.btnSimulate.Location = new System.Drawing.Point(372, 358);
             this.btnSimulate.Name = "btnSimulate";
             this.btnSimulate.Size = new System.Drawing.Size(98, 23);
@@ -197,7 +198,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 23);
             this.btnSave.TabIndex = 20;
-            this.btnSave.Text = "Save Scores to JSON";
+            this.btnSave.Text = "Save Scores to file";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

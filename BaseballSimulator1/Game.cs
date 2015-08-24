@@ -183,30 +183,46 @@ namespace BaseballSimulator1
 
       }
 
-      public void SaveScores(Team CurrentTeam)
+      public String SaveScores(Game TodayGame)
       {
           try
           {
-              StreamWriter Writer = new StreamWriter("c:\\temp\\" + CurrentTeam.Name +  + ".json");
-              string json = Reader.ReadToEnd();
-              List<String> PlayersList = JsonConvert.DeserializeObject<List<String>>(json);
-              iTeam.TeamPlayers = new List<Player>();
 
-              FieldingPosition fp = FieldingPosition.Pitcher;
-              foreach (String PlayerName in PlayersList)
-              {
+            String filename = "c:\\temp\\GameScores-" + DateTime.Now.ToString("yyyyMMddTHHmmss") + ".txt";
+            StreamWriter Writer = new StreamWriter(filename, true);
+            Writer.WriteLine("Scores for game on: " + DateTime.Now.ToString("DD-MM-YYYY HH:MM") + Environment.NewLine);
+            Writer.WriteLine("*************************************************************************************************************" + Environment.NewLine);
+            Writer.WriteLine("Home Team: " + TodayGame.HomeTeam.Name + Environment.NewLine);
+            Writer.WriteLine("______________________________________________" + Environment.NewLine);
+            Writer.WriteLine("|PLayer Name|At Bats|Hits|Batting Average|OBP|" + Environment.NewLine);
+            Writer.WriteLine("______________________________________________" + Environment.NewLine);
+            
+            foreach (Player Pl in TodayGame.HomeTeam.TeamPlayers)
+            {
+                Writer.Write("|" + Pl.Name + "|" + Pl.AtBat + "|" + Pl.Hits + "|" + Pl.BattingAVG + "|" + Pl.OBP + "|" + Environment.NewLine);
+                Writer.WriteLine("______________________________________________" + Environment.NewLine);
+            }
 
-                  Player Pl = new Player();
-                  Pl.Name = PlayerName.ToString();
-                  Pl.FieldingPositionNow = fp;
-                  iTeam.TeamPlayers.Add(Pl);
-                  fp++;
-              }
-              return iTeam;
+            Writer.WriteLine("*************************************************************************************************************" + Environment.NewLine);
+            Writer.WriteLine("Away Team: " + TodayGame.AwayTeam.Name + Environment.NewLine);
+            Writer.WriteLine("______________________________________________" + Environment.NewLine);
+            Writer.WriteLine("|PLayer Name|At Bats|Hits|Batting Average|OBP|" + Environment.NewLine);
+            Writer.WriteLine("______________________________________________" + Environment.NewLine);
+
+            foreach (Player Pl in TodayGame.AwayTeam.TeamPlayers)
+            {
+                Writer.Write("|" + Pl.Name + "|" + Pl.AtBat + "|" + Pl.Hits + "|" + Pl.BattingAVG + "|" + Pl.OBP + "|" + Environment.NewLine);
+                Writer.WriteLine("______________________________________________" + Environment.NewLine);
+            }
+
+            Writer.Close();
+            return "Scores saved to file: " + filename;
+
           }
           catch (Exception e)
           {
-              Console.WriteLine(e.Message);              
+              Console.WriteLine(e.Message);
+              return "Error occured - " + e.Message;
           }
 
       }

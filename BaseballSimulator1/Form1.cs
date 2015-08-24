@@ -76,7 +76,8 @@ namespace BaseballSimulator1
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show(GameCtl.TodayGame.SaveScores(GameCtl.TodayGame));
+
         }
 
     }

@@ -99,6 +99,7 @@ namespace BaseballSimulator1
                    Batter.Walks++;
                }
                Batter.BattingAVG = (double)Batter.Hits/(double)Batter.AtBat;
+               Batter.OBP = ((double)Batter.Hits + (double)Batter.Walks) / ((double)Batter.AtBat + (double)Batter.Walks);
            }
            //calculate running Batting Average
            
