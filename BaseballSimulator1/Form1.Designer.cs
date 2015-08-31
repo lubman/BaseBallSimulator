@@ -155,7 +155,6 @@
             // 
             // btnSimulate
             // 
-            this.btnSimulate.Enabled = false;
             this.btnSimulate.Location = new System.Drawing.Point(372, 358);
             this.btnSimulate.Name = "btnSimulate";
             this.btnSimulate.Size = new System.Drawing.Size(98, 23);

@@ -27,13 +27,21 @@ namespace BaseballSimulator1
 
         private void btnSimulate_Click(object sender, EventArgs e)
         {
-            //sim1.simMany();
+            for (int i = 1; i < 19; i++)
+            {
+                //Play nine Innings
+                GameCtl.PlayHalfInning();
+            }
+            //txtInning.Text = GameCtl.TodayGame.CurrentInning.InningNumber.ToString() + " " + GameCtl.TodayGame.CurrentInning.HalfInning.ToString();
 
-            //AtBat bt = new AtBat();
+            //update form dataview grids with the info and results from half inning
+            dtHomeScores.DataSource = GameCtl.HomeTeam.TeamPlayers;
+            dtAwayTeamScores.DataSource = GameCtl.AwayTeam.TeamPlayers;
 
-            //SimpleBatter SimpleBatter = new SimpleBatter(0.35, 0.35);
-
-            //AtBat.AtBatResult res = bt.SimulateAtBat(SimpleBatter, new GameState());
+            dtHomeScores.Update();
+            dtHomeScores.Refresh();
+            dtAwayTeamScores.Update();
+            dtAwayTeamScores.Refresh();
         }
 
 
@@ -61,7 +69,7 @@ namespace BaseballSimulator1
         private void btnPlayHalf_Click(object sender, EventArgs e)
         {
             GameCtl.PlayHalfInning();
-            txtInning.Text = GameCtl.TodayGame.inning.ToString();
+            txtInning.Text = GameCtl.TodayGame.CurrentInning.InningNumber.ToString() + " " + GameCtl.TodayGame.CurrentInning.HalfInning.ToString();
             
             //update form dataview grids with the info and results from half inning
             dtHomeScores.DataSource = GameCtl.HomeTeam.TeamPlayers;

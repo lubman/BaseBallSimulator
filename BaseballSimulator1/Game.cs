@@ -99,12 +99,11 @@ namespace BaseballSimulator1
       public Player[] homeOrder, awayOrder, homeField, awayField;
       public Player homeP, awayP;
       public int outsBefore, hRuns, aRuns, hSpot, aSpot, outs, strikes, balls;
-      public double inning;
+      public Inning CurrentInning;
 
       //constructor
       public Game()
       {
-          inning = 1;
           outs = 0;
           strikes = 0;
           balls = 0;

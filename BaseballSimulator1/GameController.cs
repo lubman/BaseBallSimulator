@@ -45,6 +45,12 @@ namespace BaseballSimulator1
            //assign teams to the game reference pointers
            TodayGame.HomeTeam = HomeTeam;
            TodayGame.AwayTeam = AwayTeam;
+
+           TodayGame.CurrentInning = new Inning();
+           TodayGame.CurrentInning.InningNumber = 1.0;
+           TodayGame.CurrentInning.HalfInning = Team.TeamType.Home;
+
+
        }
 
        public void PlayGame()
@@ -61,13 +67,15 @@ namespace BaseballSimulator1
            //check if it is top or the bottom of the inning
            //for simplicity sake batting order will be done in the sequential order
 
-           if (TodayGame.inning.ToString().Substring(TodayGame.inning.ToString().Length - 1) == "5")
+           if (TodayGame.CurrentInning.HalfInning == Team.TeamType.Away)
            {
                CurrentTeam = AwayTeam;
+               TodayGame.CurrentInning.HalfInning = Team.TeamType.Home;
            }
            else
            {
                CurrentTeam = HomeTeam;
+               TodayGame.CurrentInning.HalfInning = Team.TeamType.Away;
            }
 
            foreach (Player Batter in CurrentTeam.TeamPlayers)
@@ -103,7 +111,8 @@ namespace BaseballSimulator1
            }
            //calculate running Batting Average
            
-           TodayGame.inning = TodayGame.inning + 0.5; 
+           TodayGame.CurrentInning.InningNumber = TodayGame.CurrentInning.InningNumber + 0.5;
+           
        
        }
              

@@ -9,11 +9,10 @@ namespace BaseballSimulator1
           
     public class Inning
     {
-        // Half Inning will be either 0 or 0.5
-        public double HalfInning = 0;
+        public Team.TeamType HalfInning { get; set; }
 
-        public int InningNumber = 1;
-        public int Outs = 0;
+        public double InningNumber { get; set; }
+        public int Outs { get; set; }
 
     }
 }
